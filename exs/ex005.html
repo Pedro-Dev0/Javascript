@@ -17,22 +17,37 @@
     <h1>HAHAAH DOOOM</h1>
     <p>Aqui vai o resultado</p>
     <p>Aprendendo a usar o <strong>DOM</strong> em Javascript</p>
-    <div>Clique em mim</div>
+    <div id="msg">Clique em mim</div>
 
     <script>
         window.document.write('Olá, Mundo <br/>') 
         /*window.document.write(window.document.charset)
         window.document.write(window.document.URL)*/
         var p1 = window.document.getElementsByTagName('p')[1]
+
         window.document.write(`Está escrito assim: ${p1.innerText} <br/>`)
+
         window.document.write('Está escrito assim: '+ p1.innerHTML)
 
         var corpo = window.document.body
-
         corpo.style.background = 'black'
-        p1.style.color = 'rgb(86, 218, 141)'
 
+        p1.style.color = 'rgb(86, 218, 141) '
         window.alert(p1.innerText)
+
+        /*var d = window.document.getElementById('msg')
+        window.document.write(`<br/> Está assim: ${d.innerText}`)
+
+        d.style.color = 'lightgreen'
+
+        window.document.getElementById('msg').style.background = 'green'*/
+
+        var d = window.document.querySelector('div#msg')
+
+        d.style.color = 'lightgreen'
+
+        window.document.write(`<br/> Está assim: ${d.innerText}`)
+
     </script>
 </body>
 </html>
