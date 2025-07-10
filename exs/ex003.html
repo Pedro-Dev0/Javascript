@@ -22,10 +22,10 @@
     <h1>Olá, mundo!</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, minus quis? Sequi esse harum deserunt a architecto necessitatibus obcaecati mollitia consectetur ipsum. Alias, laudantium? Consequatur, sint facilis. Cum, sint architecto!</p>
     <script>
-       var n1 = window.prompt('Digite um numero') // string
-       var n2 = window.prompt('Digite outro numero') // o valor retorna como string
+       var n1 = Number(window.prompt('Digite um numero')) // string
+       var n2 = Number(window.prompt('Digite outro numero')) // o valor retorna como string/ graças ao number transforma em numero.
        var soma = n1 + n2
-       window.alert(soma)
+       window.alert(String(soma))
         /* number + number para adição
         string + string concatenação 
         
