@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LATAM</title>
+</head>
+<body>
+    <h1>Aeroporto</h1>
+    <input type="text" name="idnacional" id="idnacional">
+    <input type="button" value="verificação" onclick="verificar()">
+    <div id="res">Resposta:</div>
+
+    <script>
+        function verificar() {
+            var país = window.document.getElementById('idnacional').value
+            var res = window.document.querySelector('div#res')
+
+            res.innerHTML = `<p>Você vem do país ${país}</p>`
+            if (país == 'Brasil') {
+                res.innerHTML += `<p>Você tem nossa naciolidade</p>`
+            } else if (país == 'Portugal') {
+                res.innerHTML += `<p>Ladrão, saia agora do Brasil, e só volte quando nós devolver nosso ouro!</p>`
+            } else {
+                res.innerHTML += `<p>Estrangeiro</p>`
+            }
+        }
+    </script>
+</body>
+</html>
