@@ -11,20 +11,42 @@
             font-size: 15px;
             box-sizing: ;
         }
+
         header {
             color: white;
             text-align: center;
+            font-family: 'Courier New', Courier, monospace;
         }
+
         section {
             background-color: white;
-            border-radius: 300px;
+            border-radius: 25px;
             padding: 20px;
-            width: 300px;
+            width: 400px;
             height: 300px;
             margin: auto;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.329);
 
         }
+
+        div#mensagem {
+            text-align: center;
+            margin-bottom: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+        }
+
+        div#imagem {
+            margin: auto;
+            border-radius: 10000px;
+            height: 290px;
+            width: 300px;
+            overflow: hidden;
+            background-size: contain;
+            background-position: center center;
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.521);
+        }
+
         footer {
             text-align: center; 
             color: white;
@@ -32,16 +54,16 @@
         }
     </style>
 </head>
-<body>
+<body onload="carregar()">
     <header>
-        <h1>Está de...</h1>
+        <h1>Agora são...</h1>
     </header>
     <section>
         <div id="mensagem">
             <p>Vai aparecer mensagem...</p>
         </div>
         <div id="imagem">
-            <img src="Manha.jpg" alt="imagem">
+            <img src="Manha.jpg" alt="img">
         </div>
     </section>
     <footer>
@@ -55,7 +77,18 @@
             var data = new Date()
             var hora = data.getHours()
 
-            msg.innerHTML = `Agora são ${hora} horas`
+            msg.innerHTML = `Agora são ${hora} horas!`
+
+            if (hora >= 0 && hora < 12) {
+                //bom dia
+                img.src = 'Manha.jpg'
+            } else if (hora >= 12 && hora < 18) {
+                //boa tarde
+                img.src = 'Tarde.jpg'
+            } else {
+                //boa noite
+                img.src = 'Noite.jpg'
+            }
         }
     </script>
 </body>
