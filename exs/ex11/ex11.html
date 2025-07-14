@@ -37,18 +37,26 @@
         <h1>Está de...</h1>
     </header>
     <section>
-        <div>
+        <div id="mensagem">
             <p>Vai aparecer mensagem...</p>
         </div>
-        <div>
-            <img src="" alt="">
+        <div id="imagem">
+            <img src="Manha.jpg" alt="imagem">
         </div>
     </section>
     <footer>
         <p>Curso em vídeo</p>
     </footer>
-    <script>
 
+    <script>
+        function carregar() {
+            var msg = window.document.getElementById('mensagem')
+            var img = window.document.getElementById('imagem')
+            var data = new Date()
+            var hora = data.getHours()
+
+            msg.innerHTML = `Agora são ${hora} horas`
+        }
     </script>
 </body>
 </html>
