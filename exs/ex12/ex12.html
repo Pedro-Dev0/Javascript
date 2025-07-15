@@ -22,7 +22,6 @@
             border-radius: 25px;
             padding: 20px;
             width: 400px;
-            height: 150px;
             margin: auto;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.329);
 
@@ -94,6 +93,7 @@
                     genero = `Mulher`
                     if(idade >=0 && idade < 12) {
                         //criança
+                        img.setAttribute('src', 'child-f.jpg')
                     } else if (idade > 12 && idade < 21) {
                         //Jovem
                     } else if (idade < 50) {
