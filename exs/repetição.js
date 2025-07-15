@@ -12,6 +12,6 @@ do {
 } while (a < 6)
  */
 
-for (var a = 1; a <= 1000; a = 5) {
+for (var a = 0; a <= 1000; a+=10) {
     console.log(`Passo ${a}`)
 }
