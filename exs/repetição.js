@@ -1,3 +1,4 @@
+/*
 var c = 0
 while (c < 6) {
     console.log('Tudo bem?')
@@ -9,3 +10,8 @@ do {
     console.log('HAHAHA')
     a++
 } while (a < 6)
+ */
+
+for (var a = 1; a <= 1000; a = 5) {
+    console.log(`Passo ${a}`)
+}
