@@ -22,7 +22,7 @@
             border-radius: 25px;
             padding: 20px;
             width: 400px;
-            height: 300px;
+            height: 150px;
             margin: auto;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.329);
 
@@ -76,12 +76,35 @@
                 var fsex = document.getElementsByName('radsex')
                 var idade = ano - Number(fano.value)
                 var genero = ``
+                var img = document.createElement('img')
+                img.setAttribute('id', 'foto')
                 if (fsex[0].checked) {
                     genero = `Homem`
+                    if(idade >=0 && idade < 12) {
+                        //criança
+                        img.setAttribute('src', 'child-m.jpg')
+                    } else if (idade > 12 && idade < 21) {
+                        //Jovem
+                    } else if (idade < 50) {
+                        //adulto
+                    } else{
+                        //velho
+                    }
                 } else if (fsex[1].checked) {
                     genero = `Mulher`
+                    if(idade >=0 && idade < 12) {
+                        //criança
+                    } else if (idade > 12 && idade < 21) {
+                        //Jovem
+                    } else if (idade < 50) {
+                        //adulto
+                    } else{
+                        //velho
+                    }
                 }
-                res.innerHTML = `Sua idade é ${idade} e você é um/uma ${genero}`
+                res.style.textAlign = 'center'
+                res.innerHTML = `Detectamos ${genero} com ${idade} anos` 
+                res.appendChild(img)
             }
         }
     </script>
