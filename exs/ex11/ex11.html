@@ -47,6 +47,7 @@
         footer {
             text-align: center; 
             color: white;
+            color: ;
             font-weight: bold;
         }
     </style>
@@ -75,16 +76,19 @@
             var hora = data.getHours()
 
             msg.innerHTML = `Agora são ${hora} horas!`
-
+            
             if (hora >= 0 && hora < 12) {
                 //bom dia
                 img.src = 'Manha1.jpg'
+                document.body.style.background = '#CC945F'
             } else if (hora >= 12 && hora < 18) {
                 //boa tarde
                 img.src = 'Tarde1.jpg'
+                document.body.style.background = '#7B543E'
             } else {
                 //boa noite
                 img.src = 'Noite1.jpg'
+                document.body.style.background = '#755890'
             }
         }
     </script>
