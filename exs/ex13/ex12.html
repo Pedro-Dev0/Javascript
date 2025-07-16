@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre o dia</title>
+    <title>Conta</title>
     <style>
         body {
             background-color: rgb(111, 111, 221);
@@ -24,7 +24,6 @@
             width: 400px;
             margin: auto;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.329);
-
         }
 
         footer {
@@ -36,18 +35,30 @@
 </head>
 <body>
     <header>
-        <h1>Verificador de idade...</h1>
+        <h1>
+            Vamos contar...
+        </h1>
     </header>
     <section>
-        <div>
-            <p>Ano de nascimento:
+        <div id="dados">
+            <p>
+                Inicio:
+                <input type="number" name="inicio" id="txtini">
             </p>
             <p>
+                Fim:
+                <input type="number" name="fim" id="txtfim">
             </p>
             <p>
+                Passo:
+                <input type="number" name="passo" id="txtpas">
+            </p>
+            <p>
+                <input type="button" value="Contar" onclick="contar()">
             </p>
         </div>
         <div id="res">
+            preparando a contagem...
         </div>
     </section>
     <footer>
@@ -55,7 +66,32 @@
     </footer>
 
     <script>
-       
+        function contar() {
+            var ini = document.getElementById('txtini')
+            var fim = document.getElementById('txtfim')
+            var passo = document.getElementById('txtpas')
+            var res = document.getElementById('res')
+
+            if (ini.value.length == 0 || fim.value.length == 0 || passo.value.lenght == 0) {
+                window.alert('ERRO, faltam dados!')
+            } else {
+                res.innerHTML = 'Contando: '
+                let i = Number(ini.value)
+                let f = Number(fim.value)
+                let p = Number(passo.value)
+                if (i < f) {
+                    for(let c = 1; c <= f; c += p) {
+                    res.innerHTML += `${c}..`
+                    }
+                } else {
+                    for(let c = 1; c>= f; c-=p) {
+                        res.innerHTML +=  ` ${c} `
+                    }
+                    
+                }
+
+            }
+        }
     </script>
 </body>
 </html>
