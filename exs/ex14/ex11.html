@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o dia</title>
+    <style>
+        body {
+            background-color: rgb(111, 111, 221);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+        }
+
+        header {
+            color: white;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        section {
+            background-color: white;
+            border-radius: 25px;
+            padding: 20px;
+            width: 400px;
+            height: 300px;
+            margin: auto;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.329);
+
+        }
+
+        div#mensagem {
+            text-align: center;
+            margin-bottom: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+        }
+
+        div#foto {
+            margin: auto;
+            border-radius: 10000px;
+            height: 290px;
+            width: 300px;
+            overflow: hidden;
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.521);
+        }
+
+        footer {
+            text-align: center; 
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>Agora são...</h1>
+    </header>
+    <section>
+        <div id="mensagem">
+            <p>Vai aparecer mensagem...</p>
+        </div>
+        <div id="foto">
+            <img id="imagem" src="Manha1.jpg" alt="img">
+        </div>
+    </section>
+    <footer>
+        <p>Curso em vídeo</p>
+    </footer>
+
+    <script>
+        function carregar() {
+            var msg = window.document.getElementById('mensagem')
+            var img = window.document.getElementById('imagem')
+            var data = new Date()
+            var hora = data.getHours()
+
+            msg.innerHTML = `Agora são ${hora} horas!`
+            
+            if (hora >= 0 && hora < 12) {
+                //bom dia
+                img.src = 'Manha1.jpg'
+                document.body.style.background = '#CC945F'
+            } else if (hora >= 12 && hora < 18) {
+                //boa tarde
+                img.src = 'Tarde1.jpg'
+                document.body.style.background = '#7B543E'
+            } else {
+                //boa noite
+                img.src = 'Noite1.jpg'
+                document.body.style.background = '#755890'
+            }
+        }
+    </script>
+</body>
+</html>
