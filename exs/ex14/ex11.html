@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre o dia</title>
+    <title>Tabuada</title>
     <style>
         body {
             background-color: rgb(111, 111, 221);
@@ -28,22 +28,6 @@
 
         }
 
-        div#mensagem {
-            text-align: center;
-            margin-bottom: 5px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 16px;
-        }
-
-        div#foto {
-            margin: auto;
-            border-radius: 10000px;
-            height: 290px;
-            width: 300px;
-            overflow: hidden;
-            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.521);
-        }
-
         footer {
             text-align: center; 
             color: white;
@@ -51,45 +35,29 @@
         }
     </style>
 </head>
-<body onload="carregar()">
+<body>
     <header>
-        <h1>Agora são...</h1>
+        <h1>Tabuadinha</h1>
     </header>
     <section>
-        <div id="mensagem">
-            <p>Vai aparecer mensagem...</p>
+        <div>
+            <p>
+                Numero: <input type="number" name="num" id="txtn">
+                <input type="button" value="Gerar tabuada" onclick="tabuada()">
+            </p>
         </div>
-        <div id="foto">
-            <img id="imagem" src="Manha1.jpg" alt="img">
+        <div>
+            <select name="tabuada" id="seltab" size="10">
+                <option value="">Digite um numero acima!</option>
+            </select>
         </div>
     </section>
     <footer>
         <p>Curso em vídeo</p>
     </footer>
 
-    <script>
-        function carregar() {
-            var msg = window.document.getElementById('mensagem')
-            var img = window.document.getElementById('imagem')
-            var data = new Date()
-            var hora = data.getHours()
-
-            msg.innerHTML = `Agora são ${hora} horas!`
-            
-            if (hora >= 0 && hora < 12) {
-                //bom dia
-                img.src = 'Manha1.jpg'
-                document.body.style.background = '#CC945F'
-            } else if (hora >= 12 && hora < 18) {
-                //boa tarde
-                img.src = 'Tarde1.jpg'
-                document.body.style.background = '#7B543E'
-            } else {
-                //boa noite
-                img.src = 'Noite1.jpg'
-                document.body.style.background = '#755890'
-            }
-        }
+    <script src="script.js">
+        
     </script>
 </body>
 </html>
