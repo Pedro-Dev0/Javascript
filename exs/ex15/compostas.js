@@ -24,9 +24,8 @@ while(pos<num.length) {
     pos++
 }
 */
-
+pos = 0
 do {
-    pos = 0
     console.log(`${num[pos]}`)
     pos++
 } while (pos<num.length)
