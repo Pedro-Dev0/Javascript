@@ -64,3 +64,19 @@ function soma(n1=0, n2=0) {
 
 solu = soma(7, 9)
 console.log(solu)
+
+var A = function(x) {
+    return x*2
+}
+
+console.log(A(10))
+
+function fatorial(n) {
+    if(n==1) {
+        return 1
+    } else {
+        return n * fatorial(n-1)
+    }
+}
+
+console.log(fatorial(5))
