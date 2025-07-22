@@ -46,3 +46,21 @@ if (posi == -1) {
 } else {
     console.log(`O valor está na posição ${posi}`)
 }
+
+function parimp(n) {
+    if(n%2==0) {
+        return 'Par'
+    } else {
+        return 'Impar'
+    }
+}
+
+let res = parimp(224)
+console.log(res)
+
+function soma(n1=0, n2=0) {
+    return n1 + n2
+}
+
+solu = soma(7, 9)
+console.log(solu)
